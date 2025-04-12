@@ -1,5 +1,6 @@
 package com.sron.customplayername;
 
+import java.util.UUID;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.api.distmarker.Dist;
@@ -18,8 +19,10 @@ public class NameRenderHandler {
       return;
     }
 
-    String newName = CustomNameRegistry.getNameFor(player);
-    player.setCustomName(Component.literal(newName));
+    UUID id = player.getUUID();
+    String name = player.getName().getString();
+    String customName = CustomNameRegistry.getNameFor(id, name);
+    player.setCustomName(Component.literal(customName));
     player.setCustomNameVisible(true);
   }
 }
