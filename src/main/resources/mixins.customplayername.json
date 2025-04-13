@@ -1,13 +1,15 @@
 {
   "required": true,
   "minVersion": "0.8",
+  "refmap": "mixins.customplayername.refmap.json",
   "package": "com.sron.customplayername.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "PlayerDisplayNameMixin",
+    "PlayerDisplayNameMixin"
+  ],
+  "client": [
     "PlayerInfoMixin"
   ],
-  "client": [],
   "server": [],
   "injectors": {
     "defaultRequire": 1
